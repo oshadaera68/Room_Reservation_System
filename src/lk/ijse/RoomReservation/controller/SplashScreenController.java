@@ -64,7 +64,7 @@ public class SplashScreenController implements Initializable {
                     }
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
-                    stage.setTitle("Blue Ocean Hotel - Room Reservation System v0.1");
+                    stage.setTitle("Blue Ocean Hotel - RRS v0.1 - Dashboard");
                     stage.setFullScreen(false);
                     stage.setResizable(false);
                     stage.show();

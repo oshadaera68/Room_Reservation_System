@@ -63,7 +63,7 @@ public class DashBoardFormController implements Initializable {
         URL resource = getClass().getResource("../view/LogInForm.fxml");
         Parent load = FXMLLoader.load(resource);
         Stage window = (Stage) rootContext.getScene().getWindow();
-        window.setTitle("Log In Form RRS v0.1");
+        window.setTitle("Log In Form - RRS v0.1");
         window.setScene(new Scene(load));
     }
 

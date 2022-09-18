@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="rootContext" prefHeight="455.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.CarReservation.controller.AboutUsController">
+<AnchorPane fx:id="rootContext" prefHeight="455.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.RoomReservation.controller.AboutUsController">
    <children>
       <ImageView fitHeight="455.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -33,5 +33,10 @@
             <ColorAdjust brightness="1.0" contrast="-0.67" hue="1.0" saturation="1.0" />
          </effect>
       </JFXTextArea>
+      <Label layoutX="200.0" layoutY="412.0" text="Version v0.1 - Powered By Era" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

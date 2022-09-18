@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="rootContext" prefHeight="456.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.CarReservation.controller.DashBoardFormController">
+<AnchorPane fx:id="rootContext" prefHeight="456.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.RoomReservation.controller.DashBoardFormController">
    <children>
       <ImageView disable="true" fitHeight="587.0" fitWidth="945.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,20 +24,25 @@
             <Font size="17.0" />
          </font>
       </JFXButton>
-      <Label layoutX="340.0" layoutY="132.0" text="Welcome To The" textFill="WHITE">
+      <Label layoutX="234.0" layoutY="97.0" text="Welcome To The" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="31.0" />
+            <Font name="System Bold" size="58.0" />
          </font>
       </Label>
-      <Label layoutX="280.0" layoutY="194.0" text="Blue Ocean Hotel" textFill="#00ff70">
+      <Label layoutX="263.0" layoutY="205.0" text="Blue Ocean Hotel..!" textFill="#00ff70">
          <font>
             <Font name="Ubuntu Regular" size="48.0" />
          </font>
       </Label>
       <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="23.0" onAction="#exitOnAction" prefHeight="31.0" prefWidth="84.0" ripplerFill="WHITE" style="-fx-background-color: #e74c3c;" text="Exit" textFill="WHITE" />
-      <Label fx:id="lblTime" layoutX="793.0" layoutY="16.0" text="10:12:23" textFill="WHITE">
+      <Label fx:id="lblTime" layoutX="793.0" layoutY="16.0" text="10:12:23" textFill="#8a00ff">
          <font>
             <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="306.0" layoutY="425.0" text="Version v0.1 - Powered By Era" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="23.0" />
          </font>
       </Label>
    </children>
