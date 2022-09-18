@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="rootContext" prefHeight="483.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.CarReservation.controller.SplashScreenController">
+   <children>
+      <ImageView fitHeight="483.0" fitWidth="749.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/splash.jpg" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="progressBar" layoutX="79.0" layoutY="337.0" prefHeight="23.0" prefWidth="581.0" progress="0.0" />
+      <Label layoutX="543.0" layoutY="315.0" prefHeight="25.0" prefWidth="70.0" text="Loading:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ProgressIndicator fx:id="progressIndicator" layoutX="613.0" layoutY="315.0" prefHeight="21.0" prefWidth="36.0" progress="0.0" style="-fx-background-color: #2ecc71;" />
+      <Label layoutX="225.0" layoutY="70.0" text="Blue Ocean Hotel">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#00a5ff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="178.0" layoutY="119.0" text="Room Reservation System">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.3932038834951456" radius="0.5">
+               <stops>
+                  <Stop color="#0020ff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="274.0" layoutY="420.0" text="version v0.1" textFill="#f5ff14">
+         <font>
+            <Font name="Ubuntu Bold" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

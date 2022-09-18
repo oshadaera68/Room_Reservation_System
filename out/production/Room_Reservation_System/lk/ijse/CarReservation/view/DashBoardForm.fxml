@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="rootContext" prefHeight="456.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.CarReservation.controller.DashBoardFormController">
+   <children>
+      <ImageView disable="true" fitHeight="587.0" fitWidth="945.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/dashboard.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="357.0" layoutY="338.0" onAction="#aboutUsOnAction" ripplerFill="WHITE" style="-fx-background-color: #3498db;" text="About Us" textFill="#ecf0f1">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="504.0" layoutY="338.0" onAction="#logInOnAction" ripplerFill="WHITE" style="-fx-background-color: #9b59b6;" text="Log In As" textFill="#ecf0f1">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="340.0" layoutY="132.0" text="Welcome To The" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="194.0" text="Blue Ocean Hotel" textFill="#00ff70">
+         <font>
+            <Font name="Ubuntu Regular" size="48.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="35.0" layoutY="23.0" onAction="#exitOnAction" prefHeight="31.0" prefWidth="84.0" ripplerFill="WHITE" style="-fx-background-color: #e74c3c;" text="Exit" textFill="WHITE" />
+      <Label fx:id="lblTime" layoutX="793.0" layoutY="16.0" text="10:12:23" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="rootContext" prefHeight="455.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.RoomReservation.controller.AboutUsController">
+   <children>
+      <ImageView fitHeight="455.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/about.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="32.0" layoutY="19.0" text="About Us" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Separator layoutX="27.0" layoutY="53.0" prefHeight="0.0" prefWidth="121.0" />
+      <JFXButton buttonType="RAISED" layoutX="572.0" layoutY="23.0" onAction="#backOnAction" prefHeight="31.0" prefWidth="66.0" ripplerFill="WHITE" style="-fx-background-color: #95a5a6;" text="Back" textFill="WHITE" />
+      <JFXTextArea layoutX="42.0" layoutY="82.0" prefHeight="322.0" prefWidth="580.0" text="With a history spanning over 54 years, Blue Ocean Hotel Galle is one of the oldest hotels in Sri Lanka. This premier colonial heritage hotel in Galle has earned a reputation over the years for its magnificent structure and ambiance, the old world charm w hich harks back to the grandeur of old Ceylon, a romantic legacy left by the colonial Governor General who used it as his residence, the exceptional service offered by its well-trained staff and its popularity as a venue for weddings.">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <ColorAdjust brightness="1.0" contrast="-0.67" hue="1.0" saturation="1.0" />
+         </effect>
+      </JFXTextArea>
+      <Label layoutX="200.0" layoutY="412.0" text="Version v0.1 - Powered By Era" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
