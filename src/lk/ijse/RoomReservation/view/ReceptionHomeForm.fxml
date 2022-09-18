@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.RoomReservation.controller.ReceptionHomeFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane fx:id="rootContext" prefHeight="528.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.RoomReservation.controller.ReceptionHomeFormController">
+   <children>
+      <ImageView fitHeight="535.0" fitWidth="803.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/about.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="24.0" onAction="#logOutOnAction" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #e74c3c;" text="Log Out" textFill="WHITE" />
+      <Label layoutX="181.0" layoutY="60.0" text="Reception Home Page">
+         <font>
+            <Font name="Ubuntu Regular" size="43.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.8737864077669903" startX="0.49514563106796117">
+               <stops>
+                  <Stop color="#6200ff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="60.0" layoutY="178.0" onAction="#roomOnAction" prefHeight="56.0" prefWidth="200.0" style="-fx-background-color: #34495e;" text="Reserve a Room" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="60.0" layoutY="279.0" onAction="#maintanceOnAction" prefHeight="56.0" prefWidth="200.0" style="-fx-background-color: #34495e;" text="Maintance" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="78.0" fitWidth="59.0" layoutX="704.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/contact_support.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>

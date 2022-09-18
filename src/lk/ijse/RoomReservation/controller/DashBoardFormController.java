@@ -40,15 +40,10 @@ public class DashBoardFormController implements Initializable {
     private void loadTime() {
         Timeline time = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             LocalTime currentTime = LocalTime.now();
-            lblTime.setText(
-                    currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond()
-            );
-        }),
-                new KeyFrame(Duration.seconds(1))
-        );
+            lblTime.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + currentTime.getSecond());
+        }), new KeyFrame(Duration.seconds(1)));
         time.setCycleCount(Animation.INDEFINITE);
         time.play();
-
     }
 
     public void aboutUsOnAction(ActionEvent actionEvent) throws IOException {

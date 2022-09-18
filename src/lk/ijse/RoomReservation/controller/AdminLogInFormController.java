@@ -32,22 +32,14 @@ public class AdminLogInFormController {
     }
 
     public void logInOnAction(ActionEvent actionEvent) throws IOException {
-        int attempts = 0;
-        attempts++;
-        if (attempts <= 5) {
-            if (txtUserName.getText().equals("admin") && txtPassword.getText().equals("1234")) {
-                URL resource = getClass().getResource("../view/AdminHomeForm.fxml");
-                Parent load = FXMLLoader.load(resource);
-                Stage window = (Stage) rootContext.getScene().getWindow();
-                window.setTitle("Admin Section - RRS v0.1");
-                window.setScene(new Scene(load));
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Your username and password is incorrect.!\nYou Have 5 time trys and this is " + attempts + ".").show();
-            }
+        if (txtUserName.getText().equals("admin") && txtPassword.getText().equals("1234")) {
+            URL resource = getClass().getResource("../view/AdminHomeForm.fxml");
+            Parent load = FXMLLoader.load(resource);
+            Stage window = (Stage) rootContext.getScene().getWindow();
+            window.setTitle("Admin Section - RRS v0.1");
+            window.setScene(new Scene(load));
         } else {
-            txtUserName.setEditable(false);
-            txtPassword.setEditable(false);
-            new Alert(Alert.AlertType.WARNING, "Account is Temporarily Disabled or You Did not Sign in Correctly.").show();
+            new Alert(Alert.AlertType.WARNING, "Your username and password is incorrect.!").show();
         }
     }
 }
