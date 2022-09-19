@@ -28,10 +28,10 @@ public class ReceptionHomeFormController {
     }
 
     public void roomOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = getClass().getResource("../view/AvailabilityForm.fxml");
+        URL resource = getClass().getResource("../view/AvaliabilityForm.fxml");
         Parent load = FXMLLoader.load(resource);
         Stage window = (Stage) rootContext.getScene().getWindow();
-        window.setTitle("Reception Log In Form - RRS v0.1");
+        window.setTitle("Check Room Avaliability - RRS v0.1");
         window.setScene(new Scene(load));
     }
 
