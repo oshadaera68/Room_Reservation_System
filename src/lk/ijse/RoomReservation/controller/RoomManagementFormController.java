@@ -5,22 +5,31 @@
 
 package lk.ijse.RoomReservation.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import lk.ijse.RoomReservation.model.Room;
 import lk.ijse.RoomReservation.view.tm.RoomTm;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class RoomManagementFormController implements Initializable {
+    static ArrayList<Room> rooms = new ArrayList();
     public AnchorPane rootContext;
     public JFXTextField txtRoomId;
     public JFXTextField txtRoomCharges;
@@ -32,6 +41,7 @@ public class RoomManagementFormController implements Initializable {
     public TableColumn colRoomCharges;
     public TableColumn colAvaliableOffers;
     public TableColumn colDelete;
+    public JFXButton btnSave;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,16 +56,93 @@ public class RoomManagementFormController implements Initializable {
         obList.add("Double");
         obList.add("Triple");
         obList.add("Quad");
-
         cmbRoomType.setItems(obList);
+
+        ObservableList<String> oblist = FXCollections.observableArrayList();
+        oblist.add("Yes");
+        oblist.add("No");
+        cmbAvailableOffers.setItems(oblist);
+
+        loadAllRooms();
+        tblRoom.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            setData(newValue);
+        });
+    }
+
+    private void setData(RoomTm tm) {
+        btnSave.setText("Update Room");
+        txtRoomId.setText(tm.getId());
+        txtRoomCharges.setText(tm.getCharges());
+        cmbRoomType.getValue();
+        cmbAvailableOffers.getValue();
+    }
+
+    private void loadAllRooms() {
+        ObservableList<RoomTm> tms = FXCollections.observableArrayList();
+        for (Room rTemp : rooms) {
+            Button deleteBtn = new Button("Delete");
+            tms.add(new RoomTm(rTemp.getId(), rTemp.getType(), rTemp.getCharges(), rTemp.getOffers(), deleteBtn));
+
+            deleteBtn.setOnAction(event -> {
+                ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
+                ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you Sure to delete Room?", yes, no);
+                alert.setTitle("Confirmation Alert");
+                alert.setHeaderText(null);
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.orElse(no) == yes) {
+                    tms.remove(rTemp);
+                    loadAllRooms();
+                } else {
+
+                }
+            });
+        }
+        tblRoom.setItems(tms);
     }
 
     public void saveRoomOnAction(ActionEvent actionEvent) {
+        try {
+            Room room = new Room(txtRoomId.getText(), cmbRoomType.getValue().toString(), txtRoomCharges.getText(), cmbAvailableOffers.getValue().toString());
+            if (ifExist(room)) {
+                if (rooms.add(room)) {
+                    loadAllRooms();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Room.").show();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Try Again...!").show();
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Room Already in List.").show();
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Boolean ifExist(Room room) {
+        for (Room r : rooms) {
+            if (r.getId().equalsIgnoreCase(room.getId())) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void btnNewRoomOnAction(ActionEvent actionEvent) {
+        btnSave.setText("Save Room");
+        txtRoomId.clear();
+        txtRoomCharges.clear();
+        cmbRoomType.getItems().clear();
+        cmbAvailableOffers.getItems().clear();
     }
 
-    public void backOnAction(ActionEvent actionEvent) {
+    public void backOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/AdminHomeForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        Stage window = (Stage) rootContext.getScene().getWindow();
+        window.setTitle("Admin Section - RRS v0.1");
+        window.setScene(new Scene(load));
     }
 }

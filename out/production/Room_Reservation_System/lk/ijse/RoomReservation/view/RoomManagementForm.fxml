@@ -25,21 +25,21 @@
             <Font name="System Bold" size="47.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtRoomId" layoutX="79.0" layoutY="132.0" opacity="0.7" prefHeight="39.0" prefWidth="302.0" promptText="Room Id" style="-fx-background-color: white;">
+      <JFXTextField fx:id="txtRoomId" layoutX="79.0" layoutY="132.0" opacity="0.7" prefHeight="39.0" prefWidth="302.0" promptText="Room Id" style="-fx-background-color: white; -fx-padding: 5;">
          <effect>
             <ColorAdjust />
          </effect>
       </JFXTextField>
-      <JFXTextField fx:id="txtRoomCharges" layoutX="79.0" layoutY="213.0" opacity="0.7" prefHeight="39.0" prefWidth="302.0" promptText="Room Charges" style="-fx-background-color: white;">
+      <JFXTextField fx:id="txtRoomCharges" layoutX="79.0" layoutY="213.0" opacity="0.7" prefHeight="39.0" prefWidth="302.0" promptText="Room Charges" style="-fx-background-color: white; -fx-padding: 5;">
          <effect>
             <ColorAdjust />
          </effect>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbRoomType" layoutX="548.0" layoutY="132.0" opacity="0.7" prefHeight="39.0" prefWidth="294.0" promptText="Room Type" style="-fx-background-color: White;" />
-      <JFXComboBox fx:id="cmbAvailableOffers" labelFloat="true" layoutX="548.0" layoutY="213.0" opacity="0.7" prefHeight="39.0" prefWidth="221.0" promptText="Available Offers" style="-fx-background-color: White;" />
-      <JFXButton buttonType="RAISED" layoutX="790.0" layoutY="217.0" onAction="#saveRoomOnAction" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1abc9c;" text="Save Room" textFill="WHITE" />
+      <JFXComboBox fx:id="cmbRoomType" layoutX="548.0" layoutY="132.0" opacity="0.7" prefHeight="39.0" prefWidth="294.0" promptText="Room Type" style="-fx-background-color: White; -fx-padding: 5;" />
+      <JFXComboBox fx:id="cmbAvailableOffers" layoutX="548.0" layoutY="213.0" opacity="0.7" prefHeight="39.0" prefWidth="221.0" promptText="Available Offers" style="-fx-background-color: White; -fx-padding: 5;" />
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="790.0" layoutY="212.0" onAction="#saveRoomOnAction" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #1abc9c;" text="Save Room" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="941.0" layoutY="16.0" onAction="#btnNewRoomOnAction" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #27ae60;" text="+New" textFill="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="32.0" onAction="#backOnAction" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #9b59b6;" text="Back" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="16.0" onAction="#backOnAction" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #9b59b6;" text="Back" textFill="WHITE" />
       <TableView fx:id="tblRoom" layoutX="79.0" layoutY="275.0" prefHeight="308.0" prefWidth="862.0">
         <columns>
           <TableColumn fx:id="colRoomId" prefWidth="175.0" text="Room Id" />
