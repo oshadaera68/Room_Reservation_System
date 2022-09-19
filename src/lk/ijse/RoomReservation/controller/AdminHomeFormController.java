@@ -38,7 +38,7 @@ public class AdminHomeFormController {
         URL resource = getClass().getResource("../view/MealPackagesForm.fxml");
         Parent load = FXMLLoader.load(resource);
         Stage window = (Stage) rootContext.getScene().getWindow();
-        window.setTitle("Room Reservation - RRS v0.1");
+        window.setTitle("Meal Packages - RRS v0.1");
         window.setScene(new Scene(load));
     }
 
