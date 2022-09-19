@@ -12,7 +12,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -26,9 +25,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.ResourceBundle;
 
-public class RoomManagementFormController implements Initializable {
+public class RoomManagementFormController {
     static ArrayList<Room> rooms = new ArrayList();
     public AnchorPane rootContext;
     public JFXTextField txtRoomId;
@@ -43,8 +41,7 @@ public class RoomManagementFormController implements Initializable {
     public TableColumn colDelete;
     public JFXButton btnSave;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
         colRoomId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colRoomType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colRoomCharges.setCellValueFactory(new PropertyValueFactory<>("charges"));
@@ -78,12 +75,12 @@ public class RoomManagementFormController implements Initializable {
     }
 
     private void loadAllRooms() {
-        ObservableList<RoomTm> tms = FXCollections.observableArrayList();
+        ObservableList<RoomTm> roomTms = FXCollections.observableArrayList();
         for (Room rTemp : rooms) {
             Button deleteBtn = new Button("Delete");
-            tms.add(new RoomTm(rTemp.getId(), rTemp.getType(), rTemp.getCharges(), rTemp.getOffers(), deleteBtn));
+            roomTms.add(new RoomTm(rTemp.getId(), rTemp.getType(), rTemp.getCharges(), rTemp.getOffers(), deleteBtn));
 
-            deleteBtn.setOnAction(event -> {
+            deleteBtn.setOnAction(e -> {
                 ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
                 ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
 
@@ -93,14 +90,14 @@ public class RoomManagementFormController implements Initializable {
                 Optional<ButtonType> result = alert.showAndWait();
 
                 if (result.orElse(no) == yes) {
-                    tms.remove(rTemp);
+                    roomTms.remove(rTemp);
                     loadAllRooms();
                 } else {
 
                 }
             });
         }
-        tblRoom.setItems(tms);
+        tblRoom.setItems(roomTms);
     }
 
     public void saveRoomOnAction(ActionEvent actionEvent) {
@@ -116,7 +113,7 @@ public class RoomManagementFormController implements Initializable {
             } else {
                 new Alert(Alert.AlertType.WARNING, "Room Already in List.").show();
             }
-        } catch (NullPointerException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
