@@ -35,6 +35,11 @@ public class ReceptionHomeFormController {
         window.setScene(new Scene(load));
     }
 
-    public void maintanceOnAction(ActionEvent actionEvent) {
+    public void maintanceOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = getClass().getResource("../view/MaintanceForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        Stage window = (Stage) rootContext.getScene().getWindow();
+        window.setTitle("Room Maintance - RRS v0.1");
+        window.setScene(new Scene(load));
     }
 }

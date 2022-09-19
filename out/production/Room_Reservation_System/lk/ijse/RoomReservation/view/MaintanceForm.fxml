@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootContext" prefHeight="514.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.RoomReservation.controller.MaintanceFormController">
+   <children>
+      <ImageView fitHeight="516.0" fitWidth="1055.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/630x355.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="343.0" layoutY="16.0" text="Maintenance" textFill="WHITE">
+         <effect>
+            <DropShadow height="0.0" radius="21.2675" width="87.07" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="23.0" layoutY="26.0" onAction="#backOnAction" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #34495e;" text="Back" textFill="WHITE" />
+      <JFXButton layoutX="145.0" layoutY="26.0" onAction="#homeOnAction" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #34495e;" text="Home" textFill="WHITE" />
+      <JFXTextField fx:id="txtRoomId" layoutX="32.0" layoutY="98.0" opacity="0.86" promptText="Room Id" style="-fx-background-color: #e67e22;" unFocusColor="WHITE" />
+      <JFXComboBox fx:id="cmbAvailability" layoutX="32.0" layoutY="153.0" opacity="0.79" prefHeight="31.0" prefWidth="169.0" promptText="Avalibility" style="-fx-background-color: #e67e22;" />
+      <AnchorPane layoutX="55.0" layoutY="203.0" opacity="0.34" prefHeight="132.0" prefWidth="124.0" style="-fx-background-color: #bdc3c7;" />
+      <JFXButton layoutX="71.0" layoutY="219.0" onAction="#confirmOnAction" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #2ecc71;" text="Confirm" textFill="WHITE" />
+      <JFXButton layoutX="71.0" layoutY="277.0" onAction="#refreshOnAction" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #9b59b6;" text="Refresh" textFill="WHITE" />
+      <TableView fx:id="tblMain" layoutX="258.0" layoutY="100.0" prefHeight="382.0" prefWidth="618.0">
+        <columns>
+          <TableColumn fx:id="colRoomId" prefWidth="137.0" text="Room Id" />
+            <TableColumn fx:id="colAvailability" prefWidth="234.0" text="Availability" />
+            <TableColumn fx:id="colMakeAvailable" prefWidth="246.0" text="Make Available" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

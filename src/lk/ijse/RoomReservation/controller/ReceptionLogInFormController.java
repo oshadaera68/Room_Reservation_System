@@ -36,6 +36,7 @@ public class ReceptionLogInFormController {
             URL resource = getClass().getResource("../view/ReceptionHomeForm.fxml");
             Parent load = FXMLLoader.load(resource);
             Stage window = (Stage) rootContext.getScene().getWindow();
+            window.setTitle("Reception Section - RRS v0.1");
             window.setScene(new Scene(load));
         } else {
             new Alert(Alert.AlertType.WARNING,"Enter correct username or password").show();
