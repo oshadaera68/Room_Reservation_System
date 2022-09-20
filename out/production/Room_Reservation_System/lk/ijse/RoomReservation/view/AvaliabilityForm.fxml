@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.RoomReservation.controller.AvailabilityFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="rootContext" prefHeight="602.0" prefWidth="1069.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.RoomReservation.controller.AvailabilityFormController">
+   <children>
+      <ImageView fitHeight="657.0" fitWidth="1069.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Check_Room_Availability.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="264.0" layoutY="21.0" text="Check Room Availability" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+         <effect>
+            <DropShadow radius="35.0" width="121.0" />
+         </effect>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="32.0" layoutY="14.0" onAction="#backOnAction" prefHeight="36.0" prefWidth="92.0" style="-fx-background-color: #34495e;" text="Back" textFill="WHITE" />
+      <JFXComboBox fx:id="cmbRoom" layoutX="68.0" layoutY="107.0" onAction="#roomTypeOnAction" prefHeight="36.0" prefWidth="206.0" promptText="Room Type" style="-fx-background-color: white; -fx-padding: 5;" />
+      <JFXComboBox fx:id="cmbMeal" layoutX="68.0" layoutY="166.0" onAction="#selectMealPackOnAction" prefHeight="36.0" prefWidth="206.0" promptText="Select Meal package" style="-fx-background-color: white; -fx-padding: 5;" />
+      <JFXDatePicker fx:id="date1" layoutX="68.0" layoutY="226.0" onAction="#d1SelectOnAction" prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: white;" />
+      <JFXDatePicker fx:id="date2" layoutX="206.0" layoutY="226.0" onAction="#d2SelectOnAction" prefHeight="36.0" prefWidth="117.0" style="-fx-background-color: white;" />
+      <AnchorPane layoutX="64.0" layoutY="293.0" opacity="0.62" prefHeight="197.0" prefWidth="346.0" style="-fx-background-color: #95a5a6;" />
+      <Label layoutX="81.0" layoutY="302.0" text="Room Cost:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="288.0" layoutY="302.0" text="RS :-" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="343.0" text="Meal Package Cost:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="343.0" text="RS :-" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="roomCost" layoutX="335.0" layoutY="303.0" prefHeight="27.0" prefWidth="59.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="mealPackCost" layoutX="342.0" layoutY="342.0" prefHeight="27.0" prefWidth="59.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="386.0" text="Full Cost:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="285.0" layoutY="386.0" text="RS :-" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullCost" layoutX="340.0" layoutY="385.0" prefHeight="27.0" prefWidth="59.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnRefresh" buttonType="RAISED" layoutX="157.0" layoutY="424.0" onAction="#refreshOnAction" prefHeight="36.0" prefWidth="147.0" style="-fx-background-color: #30336b;" text="Calculate" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="68.0" layoutY="511.0" onAction="#paymentAfterOnAction" prefHeight="36.0" prefWidth="147.0" style="-fx-background-color: #4834d4;" text="Payment After" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="262.0" layoutY="511.0" onAction="#paymentNowOnAction" prefHeight="36.0" prefWidth="147.0" style="-fx-background-color: #1B9CFC;" text="Payment Now" textFill="WHITE" />
+      <JFXComboBox fx:id="cmbMealName" layoutX="288.0" layoutY="166.0" onAction="#mealNameClick" prefHeight="36.0" prefWidth="128.0" promptText="Meal Name" style="-fx-background-color: white; -fx-padding: 5;" />
+      <AnchorPane layoutX="867.0" layoutY="93.0" opacity="0.62" prefHeight="70.0" prefWidth="164.0" style="-fx-background-color: #95a5a6;" />
+      <Label fx:id="lblTime" layoutX="882.0" layoutY="102.0" text="10:23:34" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="883.0" layoutY="129.0" text="2022-02-02" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblAvailability" layoutX="562.0" layoutY="186.0" prefHeight="338.0" prefWidth="481.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="232.0" text="Room id" />
+            <TableColumn fx:id="colAvailable" minWidth="0.0" prefWidth="248.0" text="Available" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnBooking" buttonType="RAISED" layoutX="881.0" layoutY="535.0" onAction="#bookingOnAction" prefHeight="36.0" prefWidth="147.0" style="-fx-background-color: #2ecc71;" text="Booking" textFill="WHITE" />
+   </children>
 </AnchorPane>

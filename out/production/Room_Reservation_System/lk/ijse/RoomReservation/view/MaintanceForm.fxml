@@ -36,8 +36,8 @@
       <JFXButton layoutX="71.0" layoutY="277.0" onAction="#refreshOnAction" prefHeight="31.0" prefWidth="92.0" style="-fx-background-color: #9b59b6;" text="Refresh" textFill="WHITE" />
       <TableView fx:id="tblMain" layoutX="258.0" layoutY="100.0" prefHeight="382.0" prefWidth="618.0">
         <columns>
-          <TableColumn fx:id="colRoomId" prefWidth="137.0" text="Room Id" />
-            <TableColumn fx:id="colAvailability" prefWidth="234.0" text="Availability" />
+          <TableColumn fx:id="colRoomId" prefWidth="154.0" text="Room Id" />
+            <TableColumn fx:id="colAvailability" prefWidth="217.0" text="Availability" />
             <TableColumn fx:id="colMakeAvailable" prefWidth="246.0" text="Make Available" />
         </columns>
       </TableView>
